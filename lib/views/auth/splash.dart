@@ -30,6 +30,9 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
+    precacheImage(const AssetImage('assets/on1.png'), context);
+    precacheImage(const AssetImage('assets/on2.png'), context);
+    precacheImage(const AssetImage('assets/on3.png'), context);
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Center(

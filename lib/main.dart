@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthscape/views/auth/splash.dart';
 
+import 'app/navigation/navigator.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: const Splash(),
+        navigatorKey: AppNavigator.navKey,
+        onGenerateRoute: AppRouter.generateRoutes,
       ),
     );
   }

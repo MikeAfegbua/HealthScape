@@ -22,6 +22,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeIn,
       );
+    } else {
+      AppNavigator.navigateTo(launch);
+    }
+  }
+
+  void _skip() {
+    if (_page < 2) {
+      _page == 2;
+      _pageController?.animateToPage(
+        2,
+        curve: Curves.easeIn,
+        duration: const Duration(milliseconds: 300),
+      );
+      setState(() {});
     }
   }
 
@@ -50,30 +64,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         },
         children: [
           OnboardWidget(
-              img: 'assets/on1.png',
-              onTap: _nextPage,
-              val: _page,
-              skip: () {
-                AppNavigator.navigateTo(splash);
-              }),
+            img: 'assets/on1.png',
+            onTap: _nextPage,
+            val: _page,
+            skip: _skip,
+          ),
           OnboardWidget(
-              img: 'assets/on2.png',
-              onTap: _nextPage,
-              val: _page,
-              skip: () {
-                if (_page != 2) {
-                  AppNavigator.navigateTo(launch);
-                }
-              }),
+            img: 'assets/on2.png',
+            onTap: _nextPage,
+            val: _page,
+            skip: _skip,
+          ),
           OnboardWidget(
-              img: 'assets/on3.png',
-              onTap: _nextPage,
-              val: _page,
-              skip: () {
-                if (_page != 2) {
-                  AppNavigator.navigateTo(launch);
-                }
-              }),
+            img: 'assets/on3.png',
+            onTap: _nextPage,
+            val: _page,
+            skip: _skip,
+          ),
         ],
       ),
     );
