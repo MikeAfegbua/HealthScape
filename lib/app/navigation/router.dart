@@ -3,6 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:healthscape/views/auth/launch.dart';
 import 'package:healthscape/views/auth/onboard.dart';
+import 'package:healthscape/views/auth/payment.dart';
+import 'package:healthscape/views/auth/signin.dart';
+import 'package:healthscape/views/auth/signup.dart';
 import '../../views/auth/splash.dart';
 import 'routes.dart';
 
@@ -23,6 +26,21 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const LaunchScreen(),
+        );
+      case signin:
+        return getPageRoute(
+          settings: settings,
+          view: const SignInWidget(),
+        );
+      case signup:
+        return getPageRoute(
+          settings: settings,
+          view: const SignUp(),
+        );
+      case payment:
+        return getPageRoute(
+          settings: settings,
+          view: const Payment(),
         );
 
       default:
