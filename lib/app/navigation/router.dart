@@ -6,6 +6,7 @@ import 'package:healthscape/views/auth/onboard.dart';
 import 'package:healthscape/views/auth/payment.dart';
 import 'package:healthscape/views/auth/signin.dart';
 import 'package:healthscape/views/auth/signup.dart';
+import 'package:healthscape/views/nav/home.dart';
 import '../../views/auth/splash.dart';
 import 'routes.dart';
 
@@ -31,6 +32,11 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const SignInWidget(),
+        );
+      case home:
+        return getPageRoute(
+          settings: settings,
+          view: const Home(),
         );
       case signup:
         return getPageRoute(

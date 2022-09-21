@@ -285,7 +285,7 @@ class SignUpWidget extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
                 SizedBox(
-                  width: 5.w,
+                  width: 60.w,
                 ),
                 Image.asset(
                   'assets/facebook.png',

@@ -153,16 +153,16 @@ class SignInWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/img4.png',
+                  'assets/google.png',
                   width: 30.w,
                   height: 30.h,
                   fit: BoxFit.fill,
                 ),
                 SizedBox(
-                  width: 5.w,
+                  width: 60.w,
                 ),
                 Image.asset(
-                  'assets/img4.png',
+                  'assets/facebook.png',
                   width: 30.w,
                   height: 30.h,
                   fit: BoxFit.fill,
