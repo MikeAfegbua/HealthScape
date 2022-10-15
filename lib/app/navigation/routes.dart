@@ -5,3 +5,4 @@ const String signup = '/signin';
 const String signin = '/signup';
 const String payment = '/payment';
 const String home = '/home';
+const String navBar = '/navBar';

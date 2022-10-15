@@ -7,12 +7,14 @@ class PageIndicatorWidget extends StatelessWidget {
     required this.value,
     this.size = 8,
     this.spacing = 12,
+    this.color = Colors.white,
   }) : super(key: key);
 
   final int count;
   final int value;
   final double size;
   final double spacing;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class PageIndicatorWidget extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: i == value ? Colors.white : const Color(0xffB7B5B5),
+              color: i == value ? color : const Color(0xffB7B5B5),
             ),
             duration: const Duration(milliseconds: 500),
           )

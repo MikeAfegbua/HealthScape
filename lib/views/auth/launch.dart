@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:healthscape/app/navigation/navigator.dart';
 import 'package:healthscape/app/utils/colors.dart';
 import 'package:healthscape/views/auth/custom_button.dart';
+import 'package:healthscape/views/auth/signup.dart';
 import 'package:healthscape/views/auth/splash_widget.dart';
 
 class LaunchScreen extends StatelessWidget {
@@ -34,7 +34,16 @@ class LaunchScreen extends StatelessWidget {
             child: CustomButton(
               text: 'Sign Up',
               onTap: () {
-                AppNavigator.navigateTo(signup);
+                //AppNavigator.navigateTo(signup);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUp(
+                      signUp: true,
+                      signIn: false,
+                    ),
+                  ),
+                );
               },
             ),
           ),
@@ -45,7 +54,16 @@ class LaunchScreen extends StatelessWidget {
               color: Colors.white.withOpacity(0),
               border: Border.all(width: 1, color: Colors.white),
               onTap: () {
-                AppNavigator.navigateTo(signin);
+                //AppNavigator.navigateTo(signin);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUp(
+                      signUp: false,
+                      signIn: true,
+                    ),
+                  ),
+                );
               },
             ),
           )

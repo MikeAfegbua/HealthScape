@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:healthscape/app/navigation/navigator.dart';
 import 'package:healthscape/views/auth/custom_field.dart';
 import '../../app/utils/colors.dart';
 import 'custom_button.dart';
@@ -98,7 +99,9 @@ class SignInWidget extends StatelessWidget {
           Center(
             child: CustomButton(
               text: 'Sign In',
-              onTap: () {},
+              onTap: () {
+                AppNavigator.navigateTo(navBar);
+              },
               width: 248.w,
               horizont: 0,
             ),

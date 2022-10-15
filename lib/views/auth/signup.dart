@@ -4,19 +4,30 @@ import 'package:healthscape/app/navigation/navigator.dart';
 import 'package:healthscape/app/utils/colors.dart';
 import 'package:healthscape/views/auth/custom_button.dart';
 import 'package:healthscape/views/auth/signin.dart';
-
 import 'custom_field.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+  const SignUp({required this.signUp, required this.signIn, Key? key})
+      : super(key: key);
+  final bool signUp;
+  final bool signIn;
 
   @override
   State<SignUp> createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
-  bool signup = true;
-  bool signin = false;
+  late bool signup;
+  late bool signin;
+
+  @override
+  void initState() {
+    signup = widget.signUp;
+    signin = widget.signIn;
+    setState(() {});
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,100 +48,102 @@ class _SignUpState extends State<SignUp> {
       body: Column(
         children: [
           Container(
-              height: 130.h,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(45),
-                    bottomRight: Radius.circular(45)),
-                color: AppColors.primary,
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 75,
-                    left: 40.w,
-                    child: GestureDetector(
-                      onTap: () {
-                        if (signup == false) {
-                          signin = !signin;
-                          signup = !signup;
-                          setState(() {});
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          Text(
-                            'Sign Up',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                height: 22 / 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          Visibility(
-                            visible: signup,
-                            child: Container(
-                              width: 55.w,
-                              height: 2,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(1.r),
-                              ),
+            height: 130.h,
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(45),
+                  bottomRight: Radius.circular(45)),
+              color: AppColors.primary,
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                  top: 75,
+                  left: 40.w,
+                  child: GestureDetector(
+                    onTap: () {
+                      if (signup == false) {
+                        signup = !signup;
+                        signin = !signin;
+
+                        setState(() {});
+                      }
+                    },
+                    child: Column(
+                      children: [
+                        Text(
+                          'Sign Up',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.sp,
+                              height: 22 / 16,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        Visibility(
+                          visible: signup,
+                          child: Container(
+                            width: 55.w,
+                            height: 2,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(1.r),
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                  Positioned(
-                    top: 75,
-                    right: 40.w,
-                    child: GestureDetector(
-                      onTap: () {
-                        if (signin == false) {
-                          signin = !signin;
-                          signup = !signup;
-                          setState(() {});
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          Text(
-                            'Sign In',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                height: 22 / 16,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            height: 5.h,
-                          ),
-                          Visibility(
-                            visible: signin,
-                            child: Container(
-                              width: 55.w,
-                              height: 2,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.rectangle,
-                                borderRadius: BorderRadius.circular(1.r),
-                              ),
+                ),
+                Positioned(
+                  top: 75,
+                  right: 40.w,
+                  child: GestureDetector(
+                    onTap: () {
+                      if (signin == false) {
+                        signin = !signin;
+                        signup = !signup;
+                        setState(() {});
+                      }
+                    },
+                    child: Column(
+                      children: [
+                        Text(
+                          'Sign In',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16.sp,
+                              height: 22 / 16,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        Visibility(
+                          visible: signin,
+                          child: Container(
+                            width: 55.w,
+                            height: 2,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.circular(1.r),
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
           SizedBox(
             height: 22.h,
           ),
