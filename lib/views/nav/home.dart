@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:healthscape/app/utils/colors.dart';
 import 'package:healthscape/views/auth/page_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -22,7 +21,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
       body: Padding(
-        padding: EdgeInsets.only(top: 60.h, left: 32.w, right: 32.w),
+        padding: EdgeInsets.only(top: 80.h, left: 32.w, right: 32.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -236,7 +235,7 @@ class _HomeState extends State<Home> {
                     height: 95.h,
                   ),
                   Text(
-                    'Talk tp your doctor',
+                    'Talk to your doctor',
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,

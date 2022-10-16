@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:healthscape/app/utils/colors.dart';
 import 'package:healthscape/views/nav/appointment.dart';
 import 'package:healthscape/views/nav/home.dart';
 
@@ -32,9 +33,9 @@ class _NavBarPageState extends State<NavBarPage> with VibrationMixin {
   }
 
   final screens = [
-    const Home(),
     const Appointment(),
     const Home(),
+    const Appointment(),
     const Home(),
     const Home(),
   ];
@@ -53,8 +54,8 @@ class _NavBarPageState extends State<NavBarPage> with VibrationMixin {
           ),
           child: BottomNavigationBar(
             backgroundColor: Colors.white,
-            selectedItemColor: Colors.black,
-            unselectedItemColor: const Color(0xffCCCCCC),
+            selectedItemColor: AppColors.primary,
+            unselectedItemColor: Colors.black,
             iconSize: 20.h,
             type: BottomNavigationBarType.fixed,
             elevation: 0,
