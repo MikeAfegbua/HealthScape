@@ -6,6 +6,7 @@ import 'package:healthscape/views/auth/onboard.dart';
 import 'package:healthscape/views/auth/payment.dart';
 import 'package:healthscape/views/auth/signin.dart';
 import 'package:healthscape/views/auth/signup.dart';
+import 'package:healthscape/views/nav/fixed_slot.dart';
 import 'package:healthscape/views/nav/nav_bar.dart';
 import 'package:healthscape/views/nav/slots.dart';
 import '../../views/auth/splash.dart';
@@ -38,6 +39,12 @@ class AppRouter {
         return getPageRoute(
           settings: settings,
           view: const Slots(),
+        );
+      case fixedslot:
+        String name = settings.arguments as String;
+        return getPageRoute(
+          settings: settings,
+          view: Fixed(name: name),
         );
       case navBar:
         return getPageRoute(

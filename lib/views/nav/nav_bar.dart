@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthscape/app/utils/colors.dart';
 import 'package:healthscape/views/nav/appointment.dart';
+import 'package:healthscape/views/nav/chats.dart';
 import 'package:healthscape/views/nav/home.dart';
+import 'package:healthscape/views/nav/notifications.dart';
+import 'package:healthscape/views/nav/profile.dart';
 
 import '../../app/mixins/vibration_mixin.dart';
 
@@ -34,10 +37,10 @@ class _NavBarPageState extends State<NavBarPage> with VibrationMixin {
 
   final screens = [
     const Appointment(),
+    const Chat(),
     const Home(),
-    const Appointment(),
-    const Home(),
-    const Home(),
+    const NotificationPage(),
+    const Profile(),
   ];
 
   @override

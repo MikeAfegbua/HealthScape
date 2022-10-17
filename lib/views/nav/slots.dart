@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:healthscape/app/navigation/navigator.dart';
 import 'package:healthscape/app/utils/colors.dart';
 
 class Slots extends StatelessWidget {
@@ -92,36 +93,41 @@ class DrWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 25.h),
-      child: Container(
-        width: double.infinity,
-        height: 60.h,
-        padding: EdgeInsets.only(left: 10.w, right: 10.w),
-        decoration: BoxDecoration(
-          border: Border.all(width: 1, color: AppColors.primary),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              name,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16.sp,
-                  height: 22 / 16,
-                  fontWeight: FontWeight.w400),
-            ),
-            Text(
-              time,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.sp,
-                  height: 22 / 18,
-                  fontWeight: FontWeight.w400),
-            ),
-          ],
+      child: InkWell(
+        onTap: () {
+          AppNavigator.navigateTo(fixedslot, arguments: name);
+        },
+        child: Container(
+          width: double.infinity,
+          height: 60.h,
+          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+          decoration: BoxDecoration(
+            border: Border.all(width: 1, color: AppColors.primary),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                name,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16.sp,
+                    height: 22 / 16,
+                    fontWeight: FontWeight.w400),
+              ),
+              Text(
+                time,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18.sp,
+                    height: 22 / 18,
+                    fontWeight: FontWeight.w400),
+              ),
+            ],
+          ),
         ),
       ),
     );

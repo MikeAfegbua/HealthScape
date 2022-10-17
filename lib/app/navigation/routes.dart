@@ -7,3 +7,4 @@ const String payment = '/payment';
 const String home = '/home';
 const String navBar = '/navBar';
 const String slots = '/slots';
+const String fixedslot = '/fixedslot';
