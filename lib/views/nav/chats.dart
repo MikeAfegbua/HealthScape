@@ -11,7 +11,7 @@ class Chat extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 80.w, vertical: 220.h),
         child: Column(
-          children: [],
+          children: const [],
         ),
       ),
     );
